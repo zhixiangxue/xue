@@ -161,7 +161,6 @@
             font-size: 1.2em;
             color: white;
             text-decoration: none;
-            border-bottom: 2px solid white;
             display: inline-block;
         }
 
@@ -237,7 +236,6 @@
         .education {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             padding: 20px;
             background-color: #f9f9f9;
             border-radius: 4px;
@@ -274,7 +272,40 @@
             .education {
                 flex-direction: column;
                 gap: 10px;
-                text-align: center;
+            }
+            
+            /* 修复手机端 exp-header 样式问题 */
+            .exp-header {
+                flex-direction: column;
+                gap: 8px;
+                padding: 15px;
+                background: linear-gradient(to right, #444, #f0f0f0);
+                text-align: left;
+            }
+
+            .exp-header > div:first-child {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                width: 100%;
+            }
+
+            .company-name, .project-title {
+                font-size: 1.1em;
+            }
+
+            .job-title {
+                font-size: 0.95em;
+            }
+
+            .date {
+                align-self: flex-start;
+                font-size: 0.9em;
+                margin-top: 8px;
+                padding-top: 8px;
+                border-top: 1px solid #ccc;
+                width: 100%;
+                color: #ddd;
             }
         }
 

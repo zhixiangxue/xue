@@ -1,13 +1,22 @@
-name: Deploy HTML
-on: [push]
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to GitHub Pages
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      # Your build steps here...
+      
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./   # 发布当前目录所有文件
-          keep_files: false # 清除旧文件
+          publish_dir: ./public
